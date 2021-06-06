@@ -17,8 +17,12 @@ void printSet(int [], size_t size);
 
 int main() {
     int arr[NUMBER_OF_ELEMENTS];
-    acceptSet(arr,NUMBER_OF_ELEMENTS);
-    printSet(arr,NUMBER_OF_ELEMENTS);
+    acceptSet(arr, NUMBER_OF_ELEMENTS);
+    printf("Elements in Array Before Sorting : \n");
+    printSet(arr, NUMBER_OF_ELEMENTS);
+    bubbleSort(arr,NUMBER_OF_ELEMENTS);
+    printf("Elements in Array After Sorting : \n");
+    printSet(arr, NUMBER_OF_ELEMENTS);
     return (EXIT_SUCCESS);
 }
 
@@ -41,16 +45,18 @@ void swap(int a[], int i, int j) {
     a[j] = temp;
     return;
 }
-void acceptSet(int a[], size_t size){
-    for(int i =0;i<size;i++){
-        printf("Enter the value of %i element : ",i+1);
-        scanf("%i",&a[i]);
+
+void acceptSet(int a[], size_t size) {
+    for (int i = 0; i < size; i++) {
+        printf("Enter the value of %i element : ", i + 1);
+        scanf("%i", &a[i]);
     }
     return;
 }
-void printSet(int a[], size_t size){
-    printf("The Elements in the Set are");
-    for(int i=0;i<size;i++){
-        printf("%i",a[i]);
+
+void printSet(int a[], size_t size) {
+    for (int i = 0; i < size; i++) {
+        printf("%i ,", a[i]);
     }
+    printf("\n");
 }
